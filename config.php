@@ -119,6 +119,16 @@ class DB {
 			// print_r($stmt->rowCount() . "<br />" . $userRow['pass'] . "<br />");
 			if(password_verify($pass, $userRow['pass'])) {
 				$_SESSION['user_session'] = $userRow['id'];
+				$_SESSION['user_session_email'] = $userRow['email'];
+				$_SESSION['user_session_rang'] = $userRow['rang'];
+				$_SESSION['user_session_age'] = $userRow['age'];
+				$_SESSION['user_session_name'] = $userRow['name'];
+				$_SESSION['user_session_pass'] = $userRow['pass'];
+				$_SESSION['user_session_fname'] = $userRow['fname'];
+				$_SESSION['user_session_lname'] = $userRow['lname'];
+				$_SESSION['user_session_job'] = $userRow['job'];
+				$_SESSION['user_session_adress'] = $userRow['adress'];
+				$_SESSION['user_session_phone'] = $userRow['phone'];
 				// print_r($_SESSION['user_session']);
 				return true;
 				$stmt->close();

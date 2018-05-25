@@ -11,7 +11,7 @@ if(isset($_POST['submit'])) {
 	$pass = $_POST['pass'];
 
 	if($db->logIn($email, $pass)) {
-		$db->redirect('home.php');
+		$db->redirect('index.php');
 		echo "success";
 	} else {
 		echo "Eroare";

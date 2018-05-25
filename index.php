@@ -18,6 +18,9 @@ $db = new DB;
 			<button type="button" class="btn"><img src="add.png" alt="add"></button>
 		</div> -->
 
+<?php 
+
+?>
 
 		<table class="table">
 		  <thead>
@@ -40,13 +43,21 @@ $db = new DB;
 		      <td><?php echo $value["name"]; ?></td>
 		      <td><?php echo $value["qty"]; ?></td>
 		      <td><?php echo $value["price"]; ?></td>
+		      <?php if($_SESSION['user_session_rang'] == 1) { ?>
 		      <td><a href="update.php?id=<?php echo $value['id']; ?>" class="btn btn-secondary">Edit</a><a href='delete.php?id=<?php echo $value['id']; ?>' class="btn btn-danger">Delete</a></td>
 		    </tr>
 
 			<?php
-				endforeach;
-
 				
+
+				} if(!$db->is_logged_in()) {
+					$db->redirect("login.php");
+				} else {
+					
+				}
+
+endforeach;
+
 			 ?>
 
 		  </tbody>
